@@ -3,29 +3,16 @@
 @include fontFace('mono-black','mono-black');
 @include fontFace('mono-regular','mono-regular');
 @include fontFace('sans','sans-black');
-:root {
-	// We just need to know these 3 values up front:
-	--wrapper: 100vw;
-	--gutter: 10px;
-	--noOfColumns: 14;
-
-	--noOfGutters: calc(var(--noOfColumns) - 1);
-	--ratioA: 1;
-	--ratioB: 1;
-	// Use the aspect ratio to calculate the factor for multiplication:
-	--factor: calc(var(--ratioB) / var(--ratioA));
-
-	// Calculating the row height:
-	--rh: calc(( (var(--wrapper) - (var(--noOfGutters) * var(--gutter)))
-		/ var(--noOfColumns)) * var(--factor));
-	padding: --rh;
-}
-
 .App {
+	--wrapper: 100vw;
+	--gutter: 1rem;
+	--numColumns: 14;
+	--numGutters: calc(var(--numColumns) - 1);
+	--rh: calc(((var(--wrapper) - (var(--numGutters) * var(--gutter)))/ var(--numColumns)));
+	padding: --rh;
   font-size: 16px;
   font-family: 'sans';
   .grid {
-    max-width: var(--wrapper);
     min-height: 100vh;
   	display: grid;
   	grid-template-columns: repeat(var(--noOfColumns), 1fr);
@@ -35,7 +22,6 @@
     .content {
       margin: var(--rh);
     	grid-column: span 14;
-    	// background-color: #ccc;
       h1 {
         font-size: 3.75rem;
         text-transform:uppercase;

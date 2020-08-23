@@ -14,10 +14,13 @@ class App extends Component {
         frames: {'-1':loadingFrame},
         currentFrame: loadingFrame
     };
-    this.onLinkButtonClicked = this.onLinkButtonClicked.bind(this)
+    this.onLinkButtonClicked = this.onLinkButtonClicked.bind(this);
+    this.onKeyPress = this.onKeyPress.bind(this);
+    document.addEventListener('keyup', this.onKeyPress);
   }
 
   componentDidMount() {
+    // simulate load time
     setTimeout(this.loadFrameData.bind(this), 2000);
   }
 
@@ -69,6 +72,14 @@ class App extends Component {
     this.setState(prevState => ({
       currentFrame: this.getFrame(linkindex)
     }));
+  }
+
+  onKeyPress(e){
+    const numbers = /^[0-9]+$/;
+    let key = e.key;
+    if(key.match(numbers)){
+      this.onLinkButtonClicked(parseInt(key))
+    }
   }
 
   getLoadingFrame() {
