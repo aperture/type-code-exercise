@@ -1,0 +1,28 @@
+.Nav {
+  .number {
+    position: absolute;
+    right: -1rem;
+    top: -1rem;
+    font-size: 6.5rem;
+  }
+  .buttons {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: -2rem;
+    font-size: 3rem;
+    .button {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      position: absolute;
+    }
+    .left {
+      left: 0px;
+      bottom: 0px;
+    }
+    .right{
+      right: 0px;
+      bottom: 0px;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.Frame {
+  padding: var(--rh);
+    .title {
+      text-align: center;
+      padding-bottom: var(--rh);
+    }
+    .body {
+      font-family: 'mono-regular';
+      .column-container {
+        width: 100px;
+      }
+      .columns{
+        line-height: 1.46;
+        letter-spacing: 0;
+        columns:2;
+        pre {
+          white-space: pre-wrap;
+          word-wrap: break-word;
+          b {
+            font-family: 'mono-black';
+          }
+        }
+        img {
+          max-width: 100%;
+          max-height: 300px;
+          display: block;
+          margin: 0 auto;
+          opacity: 0.6;
+          filter: alpha(opacity=60);
+        }
+      }
+    }
+}
