@@ -1,8 +1,9 @@
 .Frame {
-  padding: var(--rh);
+  position: relative;
+  padding: var(--rowHeight);
     .title {
       text-align: center;
-      padding-bottom: var(--rh);
+      padding-bottom: var(--rowHeight);
     }
     .body {
       font-family: 'mono-regular';

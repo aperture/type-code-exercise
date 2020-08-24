@@ -8,8 +8,8 @@
 	--gutter: 1rem;
 	--numColumns: 14;
 	--numGutters: calc(var(--numColumns) - 1);
-	--rh: calc(((var(--wrapper) - (var(--numGutters) * var(--gutter)))/ var(--numColumns)));
-	padding: --rh;
+	--rowHeight: calc(((var(--wrapper) - (var(--numGutters) * var(--gutter)))/ var(--numColumns)));
+	padding: --rowHeight;
   font-size: 16px;
   font-family: 'sans';
   .grid {
@@ -17,10 +17,10 @@
   	display: grid;
   	grid-template-columns: repeat(var(--noOfColumns), 1fr);
   	grid-auto-flow: dense;
-  	grid-auto-rows: minmax(var(--rh), auto); // If the content is taller then the box will grow to fit. This is only going to work if the column value is 1fr
+  	grid-auto-rows: minmax(var(--rowHeight), auto); // If the content is taller then the box will grow to fit. This is only going to work if the column value is 1fr
   	grid-gap: var(--gutter);
     .content {
-      margin: var(--rh);
+      margin: var(--rowHeight);
     	grid-column: span 14;
       h1 {
         font-size: 3.75rem;
